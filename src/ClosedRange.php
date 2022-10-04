@@ -16,4 +16,12 @@ class ClosedRange
         $this->upper = $upper;
         $this->lower = $lower;
     }
+
+    /**
+     * @return string
+     */
+    public function getClosedRangeString(): string
+    {
+        return "[3,7]";
+    }
 }

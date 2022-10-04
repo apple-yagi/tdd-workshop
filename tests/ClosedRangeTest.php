@@ -26,4 +26,9 @@ class ClosedRangeTest extends TestCase
         $this->assertEquals(self::HappyLower, $this->closedRange->lower);
         $this->assertEquals(self::HappyUpper, $this->closedRange->upper);
     }
+
+    public function test整数閉区間の文字列表記を返せること()
+    {
+        $this->assertEquals('[3,7]', $this->closedRange->getClosedRangeString());
+    }
 }
