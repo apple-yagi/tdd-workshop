@@ -69,7 +69,7 @@ class ClosedRangeTest extends TestCase
      * @param int $has
      * @return void
      */
-    public function test整数閉区間は指定した整数を含むときにtrueを返す(int $lower, int $upper, int $has): void
+    public function test整数閉区間は指定した整数を含むときにtrueを返せること(int $lower, int $upper, int $has): void
     {
         $closedRange = new ClosedRange($lower, $upper);
         $this->assertTrue($closedRange->has($has));
@@ -92,7 +92,7 @@ class ClosedRangeTest extends TestCase
      * @param int $has
      * @return void
      */
-    public function test整数閉区間は指定した整数を含むときにfalseを返す(int $lower, int $upper, int $has): void
+    public function test整数閉区間は指定した整数を含むときにfalseを返せること(int $lower, int $upper, int $has): void
     {
         $closedRange = new ClosedRange($lower, $upper);
         $this->assertNotTrue($closedRange->has($has));
