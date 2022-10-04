@@ -9,28 +9,38 @@ use TddWorkshop\ClosedRange;
 
 class ClosedRangeTest extends TestCase
 {
-    /** @var int ハッピーパスの下端点 */
-    const HappyLower = 3;
-    /** @var int ハッピーパスの上端点 */
-    const HappyUpper = 7;
-    /** @var string ハッピーパスの整数閉区間の文字列表記 */
-    const HappyClosedRangeStr = '[3,7]';
-
-    private ClosedRange $closedRange;
-
-    public function setUp(): void
+    public function closedRangePattern(): array
     {
-        $this->closedRange = new ClosedRange(self::HappyLower, self::HappyUpper);
+        return [
+            "整数閉区間は下端点に3と上端点に7を持つこと" => [3, 7, '[3,7]'],
+            "整数閉区間は下端点に1と上端点に100を持つこと" => [1, 100, '[1,100]'],
+            "整数閉区間は下端点に2と上端点に10000を持つこと" => [2, 99, '[2,99]'],
+        ];
     }
 
-    public function test整数閉区間は下端点と上端点を持つこと()
+    /**
+     * @dataProvider closedRangePattern
+     * @param int $lower
+     * @param int $upper
+     * @return void
+     */
+    public function test整数閉区間は下端点と上端点を持つこと(int $lower, int $upper): void
     {
-        $this->assertEquals(self::HappyLower, $this->closedRange->lower);
-        $this->assertEquals(self::HappyUpper, $this->closedRange->upper);
+        $closedRange = new ClosedRange($lower, $upper);
+        $this->assertEquals($lower, $closedRange->lower);
+        $this->assertEquals($upper, $closedRange->upper);
     }
 
-    public function test整数閉区間の文字列表記を返せること()
+    /**
+     * @dataProvider closedRangePattern
+     * @param int $lower
+     * @param int $upper
+     * @param string $expected
+     * @return void
+     */
+    public function test整数閉区間の文字列表記を返せること(int $lower, int $upper, string $expected): void
     {
-        $this->assertEquals(self::HappyClosedRangeStr, $this->closedRange->getClosedRangeString());
+        $closedRange = new ClosedRange($lower, $upper);
+        $this->assertEquals($expected, $closedRange->getClosedRangeString());
     }
 }
