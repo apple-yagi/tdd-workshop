@@ -13,6 +13,8 @@ class ClosedRangeTest extends TestCase
     const HappyLower = 3;
     /** @var int ハッピーパスの上端点 */
     const HappyUpper = 7;
+    /** @var string ハッピーパスの整数閉区間の文字列表記 */
+    const HappyClosedRangeStr = '[3,7]';
 
     private ClosedRange $closedRange;
 
@@ -29,6 +31,6 @@ class ClosedRangeTest extends TestCase
 
     public function test整数閉区間の文字列表記を返せること()
     {
-        $this->assertEquals('[3,7]', $this->closedRange->getClosedRangeString());
+        $this->assertEquals(self::HappyClosedRangeStr, $this->closedRange->getClosedRangeString());
     }
 }
