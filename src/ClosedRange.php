@@ -2,7 +2,7 @@
 
 namespace TddWorkshop;
 
-class Workshop
+class ClosedRange
 {
     public static function hello(): string
     {
