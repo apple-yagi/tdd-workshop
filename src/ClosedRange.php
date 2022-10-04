@@ -19,4 +19,9 @@ class ClosedRange
     {
         return "[{$this->lower},{$this->upper}]";
     }
+
+    public function has(int $point): bool
+    {
+        return $this->lower <= $point && $this->upper >= $point;
+    }
 }
