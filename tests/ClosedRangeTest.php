@@ -14,7 +14,7 @@ class ClosedRangeTest extends TestCase
         return [
             "整数閉区間は下端点に3と上端点に7を持つこと" => [3, 7, '[3,7]'],
             "整数閉区間は下端点に1と上端点に100を持つこと" => [1, 100, '[1,100]'],
-            "整数閉区間は下端点に2と上端点に10000を持つこと" => [2, 99, '[2,99]'],
+            "整数閉区間は下端点に2と上端点に99を持つこと" => [2, 99, '[2,99]'],
         ];
     }
 
@@ -41,6 +41,6 @@ class ClosedRangeTest extends TestCase
     public function test整数閉区間の文字列表記を返せること(int $lower, int $upper, string $expected): void
     {
         $closedRange = new ClosedRange($lower, $upper);
-        $this->assertEquals($expected, $closedRange->getClosedRangeString());
+        $this->assertEquals($expected, (string)$closedRange);
     }
 }

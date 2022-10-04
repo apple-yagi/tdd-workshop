@@ -2,8 +2,6 @@
 
 namespace TddWorkshop;
 
-use function var_dump;
-
 class ClosedRange
 {
     public int $lower;
@@ -22,7 +20,7 @@ class ClosedRange
     /**
      * @return string
      */
-    public function getClosedRangeString(): string
+    public function __toString(): string
     {
         return "[{$this->lower},{$this->upper}]";
     }
