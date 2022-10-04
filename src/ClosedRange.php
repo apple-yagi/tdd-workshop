@@ -16,9 +16,4 @@ class ClosedRange
         $this->upper = $upper;
         $this->lower = $lower;
     }
-
-    public static function hello(): string
-    {
-        return "hello world";
-    }
 }
