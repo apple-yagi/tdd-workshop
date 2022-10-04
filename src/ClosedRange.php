@@ -2,7 +2,9 @@
 
 namespace TddWorkshop;
 
-class ClosedRange
+use Stringable;
+
+class ClosedRange implements Stringable
 {
     /**
      * @param int $lower
